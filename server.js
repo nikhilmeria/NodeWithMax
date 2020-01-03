@@ -9,6 +9,7 @@ const route = require('./routes/index');
 const authors = require('./routes/authors');
 
 const app = express();
+const port = process.env.PORT || 4200;
 
 //bodyparse middleware, inbuilt.
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +28,4 @@ const db = mongoose.connection;
 db.on('error', error => console.error('error connection to DB'));
 db.once('open', () => console.log('Connected to Mongoose'));
 
-app.listen(process.env.PORT || 4200, () =>
-	console.log('Server listning @ 4200')
-);
+app.listen(port, () => console.log('Server listning @ ', port));

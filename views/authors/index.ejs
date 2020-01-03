@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <h2 class="page-header">Search Authors</h2>
+        <form action="/authors" method="GET">
+            <div class="form-row">
+                <div class="form-item">
+                    <label>Name</label>
+                    <input type="text" name="name">
+                </div>
+            </div>
+            <div class="form-row form-row-end">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+
+        <!--Display list of authors in DB-->
+        <% authors.forEach(ei => { %>
+        <h4><%=ei.name %></h4>
+        <% }) %>
+    </main>
+</body>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <h1>New Authors</h1>
+    </main>
+    <form action="/authors" method="POST">
+        <%- include('../includes/form.ejs') %>
+        <a href="/authors">Cancel</a>
+        <button type="submit">Create</button>
+        </div>
+    </form>
+    <br />
+
+    <% if( locals.errMess != null) { %>
+    <h3><%= errMess %></h3>
+    <% } %>
+
+</body>
+
+<%- include('../includes/end.ejs') %>
+
+<!--
+'locals' keyword is used to access any variable coming from server
+-->
